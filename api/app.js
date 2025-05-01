@@ -19,7 +19,7 @@ app.use(cors({
 }));
 
 app.get('/', (req, res) => {
-    res.write("testing");
+    res.send("testing");
 });
 
 app.use('/admin', userRoutes);
