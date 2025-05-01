@@ -2,6 +2,8 @@ require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const serverless = require('serverless-http');
+
 
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/product')
@@ -34,4 +36,5 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
-});;
+});
+module.exports.handler = serverless(app);
