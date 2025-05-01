@@ -16,7 +16,9 @@ app.use(cors({
     origin: "",
     methods: ["GET", "POST", "PUT", "DELETE"],
 }))
-
+app.get('/', (req, res) => {
+    res.write("testing")
+})
 app.use('/admin', userRoutes)
 app.use('/product', productRoutes)
 app.use('/customer', customerRoutes)
@@ -27,13 +29,6 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 }).catch((error) => {
     console.log(error.message)
 })
-
-
-
-
-
-
-
 
 
 
