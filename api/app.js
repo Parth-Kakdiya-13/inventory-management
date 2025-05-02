@@ -4,10 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const serverless = require('serverless-http');
 
-const userRoutes = require('./routes/user');
-const productRoutes = require('./routes/product');
-const customerRoutes = require('./routes/customer');
-const orderRoutes = require('./routes/order');
+const userRoutes = require('../routes/user');
+const productRoutes = require('../routes/product');
+const customerRoutes = require('../routes/customer');
+const orderRoutes = require('../routes/order');
 
 const app = express();
 
