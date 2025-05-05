@@ -5,7 +5,7 @@ const { validationResult } = require("express-validator");
 
 
 exports.postSignup = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password, phone } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() })
@@ -20,7 +20,8 @@ exports.postSignup = async (req, res) => {
         const newUser = new User({
             username: username,
             email: email,
-            password: hashedPassword
+            password: hashedPassword,
+            phone: phone
         })
         await newUser.save();
         res.status(200).json({ data: newUser })

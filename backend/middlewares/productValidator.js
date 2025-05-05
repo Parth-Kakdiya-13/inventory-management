@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 
 exports.productValidator = [
-    body('name').notEmpty().withMessage("name is required").isLength({ min: 3 }).withMessage("name must be atleast 3 characters"),
+    body('productName').notEmpty().withMessage("productName is required").isLength({ min: 3 }).withMessage("name must be atleast 3 characters"),
     body('description').notEmpty().withMessage("description is required").isLength({ min: 10 }).withMessage("description must be atleast 10 characters"),
     body('category').notEmpty().withMessage("category is required").isLength({ min: 3 }).withMessage("category must be atleast 3 characters"),
     body('price').notEmpty().withMessage("price is required"),
